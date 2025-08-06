@@ -1,0 +1,378 @@
+/* Using the brand colors from your project */
+:root {
+  --primary-dark: #0a400c;
+  --primary-light: #fefae0;
+  --accent-olive: #819067;
+  --accent-beige: #b1ab86;
+  --background-grey: #f4f7f6;
+  --text-dark: #333;
+  --text-light: #fff;
+  --border-color: #e0e0e0;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif; /* A nice modern font */
+}
+
+.dashboard-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-grey);
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 1.5rem 1rem;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.5rem 1.5rem 0.5rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(254, 250, 224, 0.1);
+}
+
+.sidebar-header .logo-icon {
+  font-size: 1.8rem;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  margin-top: 1rem;
+}
+.sidebar-nav ul,
+.sidebar-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-nav li a,
+.sidebar-footer li a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--accent-beige);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+.sidebar-nav li a:hover,
+.sidebar-footer li a:hover {
+  background-color: var(--accent-olive);
+  color: var(--primary-light);
+}
+.sidebar-nav li.active a,
+.sidebar-footer li.active a {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.sidebar-footer {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(254, 250, 224, 0.1);
+}
+
+/* --- Main Content --- */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* --- Header --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid var(--border-color);
+}
+.header-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.search-bar {
+  position: relative;
+}
+.search-bar .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+.search-bar input {
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  width: 250px;
+}
+.user-info .user-icon {
+  font-size: 2rem;
+  color: var(--accent-olive);
+}
+
+/* --- Dashboard Main Area --- */
+.dashboard-main {
+  padding: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.stats-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+.stats-icon-wrapper {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+}
+.stats-icon {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+}
+.stats-info .stats-title {
+  margin: 0 0 0.25rem 0;
+  color: var(--accent-olive);
+  font-size: 0.9rem;
+}
+.stats-info .stats-count {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* --- Complaint List --- */
+.complaint-list-section {
+  margin-top: 2.5rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.list-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.list-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filter-btn,
+.new-complaint-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-beige);
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 500;
+}
+.new-complaint-btn {
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  border-color: var(--primary-dark);
+}
+
+.complaint-list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* --- Complaint Card --- */
+.complaint-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.tags {
+  display: flex;
+  gap: 0.5rem;
+}
+.status-tag,
+.priority-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* Status Colors */
+.status-new {
+  background-color: #e0f2fe;
+  color: #0ea5e9;
+}
+.status-in-progress {
+  background-color: #fef9c3;
+  color: #ca8a04;
+}
+.status-resolved {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+/* Priority Colors */
+.priority-low {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+.priority-medium {
+  background-color: #ffedd5;
+  color: #f97316;
+}
+.priority-high {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.complaint-id {
+  font-size: 0.8rem;
+  color: #999;
+}
+.card-body h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+.card-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: #555;
+}
+.card-footer .details {
+  display: flex;
+  gap: 1.5rem;
+}
+.card-footer .details span,
+.assigned-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Add these styles to the end of src/Dashboard.css */
+
+.my-complaints-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.search-bar-small {
+  position: relative;
+}
+
+.search-bar-small .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.search-bar-small input {
+  padding: 0.6rem 1rem 0.6rem 2.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  width: 220px;
+}
+
+/* Badge styles for status indicators */
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.375rem;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: #0d6efd;
+}
+
+.badge-warning {
+  color: #000;
+  background-color: #ffc107;
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #0dcaf0;
+}
+
+.badge-success {
+  color: #fff;
+  background-color: #198754;
+}
+
+.badge-secondary {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+.badge-light {
+  color: #000;
+  background-color: #f8f9fa;
+}
+
+
